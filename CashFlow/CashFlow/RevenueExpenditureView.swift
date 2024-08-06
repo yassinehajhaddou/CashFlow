@@ -40,22 +40,24 @@ struct RevenueExpenditureView: View {
                 }
                 .padding(.vertical, 10)
                 
-                Form {
-                    Section(header: Text("Neuer Eintrag").foregroundColor(.black)){
+                ScrollView {
+                    Section(header: Text("Neuer Eintrag").foregroundColor(.white)){
                         TextField("Betrag", text: $amount)
                             .keyboardType(.decimalPad)
                             .font(.subheadline)
                             .padding()
                             .background(Color.white.opacity(0.3))
-                            .cornerRadius(8)
-                            .foregroundColor(.black)
-                            .padding(.horizontal, 10)
+                            .cornerRadius(10)
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 20)
                         
                         DatePicker("Termin", selection: $date, displayedComponents: .date)
                             .font(.subheadline)
                             .padding()
-                            .background(Color.gray.opacity(0.3))
+                            .background(Color.white.opacity(0.3))
                             .cornerRadius(10)
+                            .foregroundColor(.white)
+                            .padding(.horizontal, 20)
                         
                     }
                 }
@@ -71,4 +73,5 @@ struct RevenueExpenditureView: View {
     #Preview {
         RevenueExpenditureView()
     }
+
 
