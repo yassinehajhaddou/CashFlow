@@ -84,7 +84,6 @@ struct AmountDetailView: View {
                 
                 VStack {
                     HStack {
-                        // Trennline setzen
                         Image(systemName: "arrow.triangle.2.circlepath")
                             .foregroundColor(.white)
                         
@@ -92,6 +91,7 @@ struct AmountDetailView: View {
                             .font(.headline)
                             .foregroundColor(.white)
                     }
+                    // Trennline setzen
                     Divider()
                         .foregroundColor(.white)
                         .padding(.bottom)
