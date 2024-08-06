@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LogoView: View {
+struct SplashView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -32,7 +32,7 @@ extension Notification.Name {
     
 }
 #Preview {
-    LogoView()
+    SplashView()
 }
 
 

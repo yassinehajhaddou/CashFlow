@@ -17,7 +17,7 @@ struct ContentView: View {
             ZStack {
                 // Zeigt das Logo, wenn showLogo wahr ist
                 if showLogo {
-                    LogoView()
+                    SplashView()
                         .background(Color.black)
                 } else {
                     
