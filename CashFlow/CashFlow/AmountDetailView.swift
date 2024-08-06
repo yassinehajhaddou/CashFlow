@@ -24,7 +24,7 @@ struct AmountDetailView: View {
                     
                 }
                 
-                // Tab bar for revenue/expenditure selection
+                // Tab Bar für Einnahmen/Ausgaben-Auswahl
                 HStack {
                     Button(action: {
                         isRevenue = true
