@@ -79,9 +79,9 @@
 				D2F0D6AC2C62522800C81107 /* YearDetailView.swift */,
 				D2F0D69B2C62442400C81107 /* NewCategoryView.swift */,
 				DA1093E82C625623004D2C66 /* RevenueExpenditureView.swift */,
+				D2326F782C62655C0066B471 /* AmountDetailView.swift */,
 				D2F0D6912C6243B500C81107 /* Assets.xcassets */,
 				D2F0D6932C6243B500C81107 /* Preview Content */,
-				D2326F782C62655C0066B471 /* AmountDetailView.swift */,
 			);
 			path = CashFlow;
 			sourceTree = "<group>";
