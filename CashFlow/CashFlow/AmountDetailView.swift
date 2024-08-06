@@ -48,15 +48,12 @@ struct AmountDetailView: View {
                 }
                 .padding()
                 
-                Spacer()
-                
                 TextField("Betrag", text: $amount)
                     .font(.largeTitle)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .keyboardType(.numberPad)
                 
-                Spacer()
                 
                 Text("TERMIN")
                     .foregroundColor(.white)
