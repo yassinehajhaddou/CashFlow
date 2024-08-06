@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2326F792C62655C0066B471 /* AmountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2326F782C62655C0066B471 /* AmountDetailView.swift */; };
 		D2F0D68E2C6243B400C81107 /* CashFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F0D68D2C6243B400C81107 /* CashFlowApp.swift */; };
 		D2F0D6902C6243B400C81107 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F0D68F2C6243B400C81107 /* ContentView.swift */; };
 		D2F0D6922C6243B500C81107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F0D6912C6243B500C81107 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D2326F782C62655C0066B471 /* AmountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountDetailView.swift; sourceTree = "<group>"; };
 		D2F0D68A2C6243B400C81107 /* CashFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F0D68D2C6243B400C81107 /* CashFlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowApp.swift; sourceTree = "<group>"; };
 		D2F0D68F2C6243B400C81107 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				DA1093E82C625623004D2C66 /* RevenueExpenditureView.swift */,
 				D2F0D6912C6243B500C81107 /* Assets.xcassets */,
 				D2F0D6932C6243B500C81107 /* Preview Content */,
+				D2326F782C62655C0066B471 /* AmountDetailView.swift */,
 			);
 			path = CashFlow;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				D2F0D6A32C62500F00C81107 /* FinancialEntry.swift in Sources */,
 				D2F0D6AB2C6251E800C81107 /* LogoView.swift in Sources */,
 				DA1093E92C625623004D2C66 /* RevenueExpenditureView.swift in Sources */,
+				D2326F792C62655C0066B471 /* AmountDetailView.swift in Sources */,
 				D2F0D69F2C624FC000C81107 /* Item.swift in Sources */,
 				D2F0D6A52C62504F00C81107 /* FinancialYear.swift in Sources */,
 				D2F0D6A72C62508C00C81107 /* DataManager.swift in Sources */,
