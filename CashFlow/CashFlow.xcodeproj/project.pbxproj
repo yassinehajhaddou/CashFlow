@@ -14,6 +14,7 @@
 		D2F0D69C2C62442400C81107 /* NewCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F0D69B2C62442400C81107 /* NewCategoryView.swift */; };
 		D2F0D69F2C624FC000C81107 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F0D69E2C624FC000C81107 /* Item.swift */; };
 		D2F0D6A32C62500F00C81107 /* FinancialEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F0D6A22C62500F00C81107 /* FinancialEntry.swift */; };
+		D2F0D6A52C62504F00C81107 /* FinancialYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F0D6A42C62504F00C81107 /* FinancialYear.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		D2F0D69B2C62442400C81107 /* NewCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryView.swift; sourceTree = "<group>"; };
 		D2F0D69E2C624FC000C81107 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D2F0D6A22C62500F00C81107 /* FinancialEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialEntry.swift; sourceTree = "<group>"; };
+		D2F0D6A42C62504F00C81107 /* FinancialYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialYear.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				D2F0D69E2C624FC000C81107 /* Item.swift */,
 				D2F0D6A22C62500F00C81107 /* FinancialEntry.swift */,
+				D2F0D6A42C62504F00C81107 /* FinancialYear.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			files = (
 				D2F0D6A32C62500F00C81107 /* FinancialEntry.swift in Sources */,
 				D2F0D69F2C624FC000C81107 /* Item.swift in Sources */,
+				D2F0D6A52C62504F00C81107 /* FinancialYear.swift in Sources */,
 				D2F0D6902C6243B400C81107 /* ContentView.swift in Sources */,
 				D2F0D68E2C6243B400C81107 /* CashFlowApp.swift in Sources */,
 				D2F0D69C2C62442400C81107 /* NewCategoryView.swift in Sources */,
