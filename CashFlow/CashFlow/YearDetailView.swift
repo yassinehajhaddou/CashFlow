@@ -50,7 +50,10 @@ struct YearDetailView: View {
                 .background(Color.clear)
                 .scrollContentBackground(.hidden) // Entfernt den weißen Hintergrund der Liste
                 Divider()
-                    .background(Color.white)
+                    .overlay(.white)
+                    .frame(width: 300)
+                    .padding(.horizontal)
+                
                 HStack {
                     TextField("Name", text: $newItemName)
                         .font(.subheadline)
