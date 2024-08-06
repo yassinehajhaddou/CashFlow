@@ -90,8 +90,9 @@ struct AmountDetailView: View {
                     }
                     // Trennline setzen
                     Divider()
-                        .foregroundColor(.white)
-                        .padding(.bottom)
+                        .overlay(.white)
+                        .frame(width: 300)
+                        .padding(.horizontal)
                     
                     Button(action: {
                         // Aktion für "Speichern"
