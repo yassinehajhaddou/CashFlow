@@ -46,7 +46,7 @@ struct NewCategoryView: View {
                 Button(action: {
                 }) {
                     Text("Abbrechen")
-                        .foregroundColor(.black).opacity(0.5)
+                        .foregroundColor(.white).opacity(0.5)
                 }
                 .padding(.bottom, 50)
             }
