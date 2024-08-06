@@ -22,7 +22,6 @@ struct AmountDetailView: View {
                             .font(.system(size: 20))
                             .foregroundColor(.white)
                     
-                    Spacer()
                 }
                 
                 // Tab bar for revenue/expenditure selection
