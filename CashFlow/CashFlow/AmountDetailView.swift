@@ -23,7 +23,7 @@ struct AmountDetailView: View {
                             .foregroundColor(.white)
                     
                 }
-                
+                .padding(.vertical)
                 // Tab Bar für Einnahmen/Ausgaben-Auswahl
                 HStack {
                     Button(action: {
