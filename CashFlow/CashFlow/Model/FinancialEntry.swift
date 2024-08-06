@@ -7,6 +7,7 @@
 
 
 import Foundation
+
 struct FinancialEntry: Identifiable {
     let id = UUID() // Eindeutige ID für den Monatseintrag
     var month: Int // Monat

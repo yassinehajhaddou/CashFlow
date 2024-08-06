@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct Item: Identifiable {
     let id = UUID() // Eindeutige ID für den Posten
     var name: String // Name des Postens
