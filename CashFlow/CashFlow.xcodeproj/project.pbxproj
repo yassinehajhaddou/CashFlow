@@ -17,6 +17,7 @@
 		D2F0D6A52C62504F00C81107 /* FinancialYear.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F0D6A42C62504F00C81107 /* FinancialYear.swift */; };
 		D2F0D6A72C62508C00C81107 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F0D6A62C62508C00C81107 /* DataManager.swift */; };
 		D2F0D6A92C62519000C81107 /* FinancialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F0D6A82C62519000C81107 /* FinancialViewModel.swift */; };
+		D2F0D6AB2C6251E800C81107 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F0D6AA2C6251E800C81107 /* LogoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		D2F0D6A42C62504F00C81107 /* FinancialYear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialYear.swift; sourceTree = "<group>"; };
 		D2F0D6A62C62508C00C81107 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D2F0D6A82C62519000C81107 /* FinancialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialViewModel.swift; sourceTree = "<group>"; };
+		D2F0D6AA2C6251E800C81107 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			children = (
 				D2F0D6942C6243B500C81107 /* Preview Assets.xcassets */,
 				D2F0D6A82C62519000C81107 /* FinancialViewModel.swift */,
+				D2F0D6AA2C6251E800C81107 /* LogoView.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2F0D6A32C62500F00C81107 /* FinancialEntry.swift in Sources */,
+				D2F0D6AB2C6251E800C81107 /* LogoView.swift in Sources */,
 				D2F0D69F2C624FC000C81107 /* Item.swift in Sources */,
 				D2F0D6A52C62504F00C81107 /* FinancialYear.swift in Sources */,
 				D2F0D6A72C62508C00C81107 /* DataManager.swift in Sources */,
