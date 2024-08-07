@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct YearDetailView: View {
+struct MonthDetailView: View {
     var year: FinancialYear
     @State private var newItemName: String = ""
     @State private var newItemAmount: String = ""
@@ -79,7 +79,7 @@ struct YearDetailView: View {
     }
     
     func monthName(_ month: Int) -> String {
-        return YearDetailView.dateFormatter.monthSymbols[month - 1]
+        return MonthDetailView.dateFormatter.monthSymbols[month - 1]
     }
     
     func addItem() {
@@ -99,11 +99,11 @@ struct YearDetailView: View {
     }()
 }
 
-struct YearDetailView_Previews: PreviewProvider {
+struct MonthDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let sampleItems = [Item(name: "Beispiel", amount: 100.00)]
         let sampleEntries = [FinancialEntry(month: 1, items: sampleItems)]
         let sampleYear = FinancialYear(year: 2024, entries: sampleEntries)
-        YearDetailView(year: sampleYear, viewModel: FinancialViewModel())
+        MonthDetailView(year: sampleYear, viewModel: FinancialViewModel())
     }
 }
