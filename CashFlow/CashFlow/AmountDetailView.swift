@@ -11,6 +11,11 @@ struct AmountDetailView: View {
     @State private var isRevenue: Bool = true
     @State private var amount: String = ""
 
+    let selectedColor = Color(UIColor(red: 22/255, green: 31/255, blue: 75/255, alpha: 1))
+    let unselectedColor = Color.white
+    let selectedBackgroundColor = Color.white
+    let unselectedBackgroundColor = Color.clear
+
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color(UIColor(red: 42/255, green: 60/255, blue: 152/255, alpha: 1)), Color(UIColor(red: 22/255, green: 31/255, blue: 75/255, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -29,23 +34,31 @@ struct AmountDetailView: View {
                     Button(action: {
                         isRevenue = true
                     }) {
-                        Text("AUSGABE")
-                            .padding()
-                            .background(isRevenue ? Color.white : Color.clear)
-                            .foregroundColor(isRevenue ? Color.black : Color.white)
-                            .cornerRadius(10)
+                        HStack {
+                            Image(systemName: "minus.circle")
+                                .foregroundColor(isRevenue ? selectedColor : unselectedColor)
+                            Text("AUSGABE")
+                                .foregroundColor(isRevenue ? selectedColor : unselectedColor)
+                        }
+                        .padding()
+                        .background(isRevenue ? selectedBackgroundColor : unselectedBackgroundColor)
                     }
                     
                     Button(action: {
                         isRevenue = false
                     }) {
-                        Text("EINNAHME")
-                            .padding()
-                            .background(!isRevenue ? Color.white : Color.clear)
-                            .foregroundColor(!isRevenue ? Color.black : Color.white)
-                            .cornerRadius(10)
+                        HStack {
+                            Image(systemName: "plus.circle")
+                                .foregroundColor(isRevenue ? unselectedColor : selectedColor)
+                            Text("EINNAHME")
+                                .foregroundColor(isRevenue ? unselectedColor : selectedColor)
+                        }
+                        .padding()
+                        .background(isRevenue ? unselectedBackgroundColor : selectedBackgroundColor)
                     }
                 }
+                .border(Color.white, width: 6)
+                .cornerRadius(10)
                 .padding()
                 
                 TextField("Betrag", text: $amount)
