@@ -16,6 +16,12 @@ struct RevenueExpenditureView: View {
     @State private var isRecurring: Bool = false
     @State private var entries: [CashflowEntry] = []
     
+    @Binding var isRevenue: Bool
+    
+    let selectedColor = Color(UIColor(red: 22/255, green: 31/255, blue: 75/255, alpha: 1))
+    let unselectedColor = Color.white
+    let selectedBackgroundColor = Color.white
+    let unselectedBackgroundColor = Color.clear
     
     var body: some View {
         
@@ -51,103 +57,107 @@ struct RevenueExpenditureView: View {
                 .padding(.horizontal, 20)
                 .padding(.top, 10)
                 
-              
-              
-               
                 Text("Neuer Eintrag")
                     .font(.largeTitle.bold())
                     .foregroundColor(.white)
                 
                 VStack{
-                    HStack{
-                        Text("AUSGABE")
-                            .font(.headline)
-                            .foregroundColor(.black)
+                    HStack {
+                        Button(action: {
+                            isRevenue = true
+                        }) {
+                            HStack {
+                                Image(systemName: "minus.circle")
+                                    .foregroundColor(isRevenue ? selectedColor : unselectedColor)
+                                Text("AUSGABE")
+                                    .foregroundColor(isRevenue ? selectedColor : unselectedColor)
+                            }
                             .padding()
-                            .background(Color.white)
-                            .cornerRadius(10)
-                            .padding(.horizontal, 10)
+                            .background(isRevenue ? selectedBackgroundColor : unselectedBackgroundColor)
+                        }
                         
-                        
-                        Text("EINNAHME")
-                            .font(.headline)
-                            .foregroundColor(.black)
+                        Button(action: {
+                            isRevenue = false
+                        }) {
+                            HStack {
+                                Image(systemName: "plus.circle")
+                                    .foregroundColor(isRevenue ? unselectedColor : selectedColor)
+                                Text("EINNAHME")
+                                    .foregroundColor(isRevenue ? unselectedColor : selectedColor)
+                            }
                             .padding()
-                            .background(Color.white)
-                            .cornerRadius(10)
-                            .padding(.horizontal, 10)
-                        
-                        
+                            .background(isRevenue ? unselectedBackgroundColor : selectedBackgroundColor)
+                        }
                     }
-                    .padding(.vertical, 30)
+                    .border(Color.white, width: 6)
+                    .cornerRadius(10)
+                    .padding()
                     
                     
                     
                     VStack(alignment: .center){
                         
-
-                            TextField("BETRAG", text: $amount, prompt: Text("BETRAG").foregroundColor(.white))
-                                .multilineTextAlignment(TextAlignment.center)
-                                .frame(height: 30)
-                                .keyboardType(.decimalPad)
-                                .font(.title)
-                                .padding()
+                        
+                        TextField("BETRAG", text: $amount, prompt: Text("BETRAG").foregroundColor(amount.isEmpty ? Color.white.opacity(0.5) : Color.white))
+                            .multilineTextAlignment(TextAlignment.center)
+                            .frame(height: 30)
+                            .keyboardType(.decimalPad)
+                            .font(.title)
+                            .padding()
+                            .background(.clear)
+                            .cornerRadius(10)
+                            .foregroundColor(amount.isEmpty ? Color.white.opacity(0.5) : Color.white)
+                            .padding(.horizontal, 20)
+                        
+                        
+                        DatePicker("", selection: $date, displayedComponents: .date)
+                            .labelsHidden()
+                            .colorInvert()
+                            .colorMultiply(Color.white)
+                            .font(.subheadline)
+                            .padding()
+                            .background(.clear)
+                            .cornerRadius(10)
+                            .foregroundColor(.black)
+                            .padding(.horizontal, 20)
+                            .accentColor(.secondary)
+                            .datePickerStyle(WheelDatePickerStyle())
+                        
+                        VStack{
+                            Text("KATEGORIE")
+                                .font(.subheadline)
                                 .background(.clear)
                                 .cornerRadius(10)
                                 .foregroundColor(.white)
-                                .padding(.horizontal, 20)
-                           
-
-                                DatePicker("", selection: $date, displayedComponents: .date)
-                                    .labelsHidden()
-                                    .colorInvert()
-                                    .colorMultiply(Color.white)
-                                    .font(.subheadline)
-                                    .padding()
-                                    .background(.clear)
-                                    .cornerRadius(10)
-                                    .foregroundColor(.black)
-                                    .padding(.horizontal, 20)
-                                    .accentColor(.secondary)
-                                    .datePickerStyle(WheelDatePickerStyle())
+                                .bold()
                             
-                           VStack{
-                               Text("KATEGORIE")
-                                    .font(.subheadline)
-                                    .background(.clear)
-                                    .cornerRadius(10)
-                                    .foregroundColor(.white)
-                                    .bold()
-                               
-                               TextField("", text: $category, prompt: Text("Auswählen").foregroundColor(.white))
-                                   .multilineTextAlignment(TextAlignment.center)
-                                   .font(.subheadline)
-                                   .background(.clear)
-                                   .cornerRadius(10)
-                                   .foregroundColor(.white)
+                            TextField("", text: $category, prompt: Text("Auswählen").foregroundColor(.white))
+                                .multilineTextAlignment(TextAlignment.center)
+                                .font(.subheadline)
+                                .background(.clear)
+                                .cornerRadius(10)
+                                .foregroundColor(.white)
                             
-                           }
-                           .padding(.bottom)
+                        }
+                        .padding(.bottom)
                 
-                              
+                        VStack{
+                            Text("Details")
+                                .foregroundColor(.white)
+                                .font(.headline)
+                                .bold()
                             
-                            VStack{
-                                Text("Details")
-                                    .foregroundColor(.white)
-                                    .font(.headline)
-                                    .bold()
-                                
-                                TextField("", text: $note, prompt: Text("Notiz").foregroundColor(.white))
-                                    .multilineTextAlignment(TextAlignment.center)
-                                    .font(.subheadline)
-                                    .background(.clear)
-                                    .cornerRadius(10)
-                                    .foregroundColor(.white)
-                                   
-                            }
-                            .padding(.bottom)
+                            TextField("", text: $note, prompt: Text("Notiz").foregroundColor(.white))
+                                .multilineTextAlignment(TextAlignment.center)
+                                .font(.subheadline)
+                                .background(.clear)
+                                .cornerRadius(10)
+                                .foregroundColor(.white)
+                            
+                        }
+                        .padding(.bottom)
                     }
-                   
+                    
                     
                     Spacer()
                     
@@ -169,7 +179,7 @@ struct RevenueExpenditureView: View {
                     
                     
                 }
-  
+                
             }
         }
     }
@@ -197,19 +207,21 @@ struct RevenueExpenditureView: View {
         isRecurring = false
     }
 }
-    
-    struct CashflowEntry: Identifiable {
-        var id = UUID()
-        var amount: Double
-        var date: Date
-        var category: String
-        var details: String
-        var isRecurring: Bool
-        var isIncome: Bool
-    }
-    
-    #Preview {
-        RevenueExpenditureView()
-    }
-    
 
+struct CashflowEntry: Identifiable {
+    var id = UUID()
+    var amount: Double
+    var date: Date
+    var category: String
+    var details: String
+    var isRecurring: Bool
+    var isIncome: Bool
+}
+
+struct RevenueExpenditureView_Previews: PreviewProvider {
+    @State static var isRevenue = true
+    
+    static var previews: some View {
+        RevenueExpenditureView(isRevenue: $isRevenue)
+    }
+}

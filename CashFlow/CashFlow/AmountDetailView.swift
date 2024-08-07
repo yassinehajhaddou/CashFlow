@@ -10,12 +10,22 @@ import SwiftUI
 struct AmountDetailView: View {
     @State private var isRevenue: Bool = true
     @State private var amount: String = ""
-
+    @State private var date: Date = Date()
+    @State private var category: String = ""
+    @State private var note: String = ""
+    @State private var showDatePicker = false
+    
     let selectedColor = Color(UIColor(red: 22/255, green: 31/255, blue: 75/255, alpha: 1))
     let unselectedColor = Color.white
     let selectedBackgroundColor = Color.white
     let unselectedBackgroundColor = Color.clear
-
+    
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        return formatter
+    }()
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color(UIColor(red: 42/255, green: 60/255, blue: 152/255, alpha: 1)), Color(UIColor(red: 22/255, green: 31/255, blue: 75/255, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing)
@@ -23,9 +33,9 @@ struct AmountDetailView: View {
             
             VStack {
                 HStack {
-                        Image(systemName: "xmark")
-                            .font(.system(size: 20))
-                            .foregroundColor(.white)
+                    Image(systemName: "xmark")
+                        .font(.system(size: 20))
+                        .foregroundColor(.white)
                     
                 }
                 .padding(.vertical)
@@ -61,35 +71,82 @@ struct AmountDetailView: View {
                 .cornerRadius(10)
                 .padding()
                 
-                TextField("Betrag", text: $amount)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .keyboardType(.numberPad)
+                TextField("BETRAG", text: $amount, prompt: Text("BETRAG").foregroundColor(amount.isEmpty ? Color.white.opacity(0.5) : Color.white))
+                    .multilineTextAlignment(TextAlignment.center)
+                    .frame(height: 30)
+                    .keyboardType(.decimalPad)
+                    .font(.title)
+                    .padding()
+                    .background(.clear)
+                    .cornerRadius(10)
+                    .foregroundColor(amount.isEmpty ? Color.white.opacity(0.5) : Color.white)
+                    .padding(.horizontal, 20)
                 
+                Spacer()
                 
                 Text("TERMIN")
+                    .font(.subheadline)
                     .foregroundColor(.white)
-                Text("01.08.2024")
-                    .font(.headline)
-                    .foregroundColor(.white)
+                    .bold()
+                Button(action: {
+                    showDatePicker = true
+                }) {
+                    Text(dateFormatter.string(from: date))
+                        .font(.headline)
+                        .foregroundColor(.white)
+                }
+                .sheet(isPresented: $showDatePicker) {
+                    DatePicker("Datum auswählen", selection: $date, displayedComponents: .date)
+                        .labelsHidden()
+                        .colorInvert()
+                        .colorMultiply(selectedColor)
+                        .font(.subheadline)
+                        .padding()
+                        .background(.clear)
+                        .cornerRadius(10)
+                        .foregroundColor(.black)
+                        .accentColor(.secondary)
+                        .datePickerStyle(WheelDatePickerStyle())
+                }
+                
                 
                 Spacer()
                 
-                Text("KATEGORIE")
-                    .foregroundColor(.white)
-                Text("Miete")
-                    .font(.headline)
-                    .foregroundColor(.white)
+                VStack{
+                    Text("KATEGORIE")
+                        .font(.subheadline)
+                        .background(.clear)
+                        .cornerRadius(10)
+                        .foregroundColor(.white)
+                        .bold()
+                    
+                    TextField("", text: $category, prompt: Text("Auswählen").foregroundColor(.white))
+                        .multilineTextAlignment(TextAlignment.center)
+                        .font(.headline)
+                        .background(.clear)
+                        .cornerRadius(10)
+                        .foregroundColor(.white)
+                    
+                }
+                .padding(.bottom)
                 
                 Spacer()
                 
-                Text("DETAILS")
-                    .foregroundColor(.white)
-                Text("Notiz")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                
+                VStack{
+                    Text("DETAILS")
+                        .foregroundColor(.white)
+                        .font(.subheadline)
+                        .bold()
+                    
+                    TextField("", text: $note, prompt: Text("Notiz").foregroundColor(amount.isEmpty ? Color.white.opacity(0.5) : Color.white))
+                        .multilineTextAlignment(TextAlignment.center)
+                        .font(.headline)
+                        .background(.clear)
+                        .cornerRadius(10)
+                        .foregroundColor(.white)
+                    
+                }
+                .padding(.bottom)
                 Spacer()
                 
                 VStack {
@@ -97,9 +154,18 @@ struct AmountDetailView: View {
                         Image(systemName: "arrow.triangle.2.circlepath")
                             .foregroundColor(.white)
                         
-                        Text("Wiederholen")
-                            .font(.headline)
-                            .foregroundColor(.white)
+                        Button(action: {
+                            // Reset all input values
+                            self.amount = ""
+                            self.date = Date()
+                            self.category = ""
+                            self.note = ""
+                            self.isRevenue = true
+                        }) {
+                            Text("Wiederholen")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                        }
                     }
                     // Trennline setzen
                     Divider()
@@ -111,7 +177,7 @@ struct AmountDetailView: View {
                         // Aktion für "Speichern"
                     }) {
                         Text("Speichern")
-                            .foregroundColor(.white).opacity(0.7)
+                            .foregroundColor(amount.isEmpty ? Color.white.opacity(0.5) : Color.white)
                             .font(.headline)
                             .padding()
                             .cornerRadius(10)
