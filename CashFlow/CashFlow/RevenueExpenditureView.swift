@@ -11,7 +11,7 @@ struct RevenueExpenditureView: View {
     @State private var amount: String = ""
     @State private var date: Date = Date()
     @State private var category: String = ""
-    @State private var details: String = ""
+    @State private var note: String = ""
     @State private var isRecurring: Bool = false
     @State private var entries: [CashflowEntry] = []
     
@@ -24,6 +24,7 @@ struct RevenueExpenditureView: View {
             
             
             VStack {
+                
                 
                 HStack {
                     Button(action: {
@@ -49,9 +50,16 @@ struct RevenueExpenditureView: View {
                 .padding(.horizontal, 20)
                 .padding(.top, 10)
                 
+              
+              
+               
+                Text("Neuer Eintrag")
+                    .font(.largeTitle.bold())
+                    .foregroundColor(.white)
+                
                 VStack{
                     HStack{
-                        Text("Ausgabe")
+                        Text("AUSGABE")
                             .font(.headline)
                             .foregroundColor(.black)
                             .padding()
@@ -60,7 +68,7 @@ struct RevenueExpenditureView: View {
                             .padding(.horizontal, 10)
                         
                         
-                        Text("Einnahme")
+                        Text("EINNAHME")
                             .font(.headline)
                             .foregroundColor(.black)
                             .padding()
@@ -70,57 +78,98 @@ struct RevenueExpenditureView: View {
                         
                         
                     }
-                    .padding(.vertical, 10)
+                    .padding(.vertical, 30)
                     
-                    ScrollView {
-                        Section(header: Text("Neuer Eintrag").foregroundColor(.white)){
-                            TextField("Betrag", text: $amount)
+                    
+                    
+                    VStack(alignment: .center){
+                        
+
+                            TextField("BETRAG", text: $amount, prompt: Text("BETRAG").foregroundColor(.white))
+                                .multilineTextAlignment(TextAlignment.center)
                                 .frame(height: 30)
                                 .keyboardType(.decimalPad)
-                                .font(.subheadline)
+                                .font(.title)
                                 .padding()
-                                .background(Color.white.opacity(0.3))
+                                .background(.clear)
                                 .cornerRadius(10)
                                 .foregroundColor(.white)
                                 .padding(.horizontal, 20)
+                           
+
+                                DatePicker("", selection: $date, displayedComponents: .date)
+                                    .labelsHidden()
+                                    .colorInvert()
+                                    .colorMultiply(Color.white)
+                                    .font(.subheadline)
+                                    .padding()
+                                    .background(.clear)
+                                    .cornerRadius(10)
+                                    .foregroundColor(.black)
+                                    .padding(.horizontal, 20)
+                                    .accentColor(.secondary)
+                                    .datePickerStyle(WheelDatePickerStyle())
                             
+                           VStack{
+                               Text("KATEGORIE")
+                                    .font(.subheadline)
+                                    .background(.clear)
+                                    .cornerRadius(10)
+                                    .foregroundColor(.white)
+                                    .bold()
+                               
+                               TextField("", text: $category, prompt: Text("Auswählen").foregroundColor(.white))
+                                   .multilineTextAlignment(TextAlignment.center)
+                                   .font(.subheadline)
+                                   .background(.clear)
+                                   .cornerRadius(10)
+                                   .foregroundColor(.white)
                             
-                            DatePicker("Termin", selection: $date, displayedComponents: .date)
-                                .frame(height: 30)
-                                .font(.subheadline)
-                                .padding()
-                                .background(Color.white.opacity(0.3))
-                                .cornerRadius(10)
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 20)
+                           }
+                           .padding(.bottom)
+                
+                              
                             
-                            
-                            TextField("Kategorie", text: $category)
-                                .font(.subheadline)
-                                .padding()
-                                .background(Color.white.opacity(0.3))
-                                .cornerRadius(10)
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 20)
-                            
-                            TextField("Details", text: $details)
-                                .font(.subheadline)
-                                .padding()
-                                .background(Color.white.opacity(0.3))
-                                .cornerRadius(10)
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 20)
-                            
-                            
-                            
-                        }
+                            VStack{
+                                Text("Details")
+                                    .foregroundColor(.white)
+                                    .font(.headline)
+                                    .bold()
+                                
+                                TextField("", text: $note, prompt: Text("Notiz").foregroundColor(.white))
+                                    .multilineTextAlignment(TextAlignment.center)
+                                    .font(.subheadline)
+                                    .background(.clear)
+                                    .cornerRadius(10)
+                                    .foregroundColor(.white)
+                                   
+                            }
+                            .padding(.bottom)
                     }
+                   
+                    
+                    Spacer()
+                    
+                    Divider()
+                        .overlay(.white)
+                        .frame(width: 300)
+                        .padding(.horizontal)
+                    
+                    Button(action: {
+                        // Aktion für "Speichern"
+                    }) {
+                        Text("Speichern")
+                            .foregroundColor(.white).opacity(0.7)
+                            .font(.headline)
+                            .padding()
+                            .cornerRadius(10)
+                    }
+                    .padding(.horizontal)
                     
                     
                 }
-                
+  
             }
-            
         }
     }
     
@@ -130,7 +179,7 @@ struct RevenueExpenditureView: View {
                 amount: amountValue,
                 date: date,
                 category: category,
-                details: details,
+                details: note,
                 isRecurring: isRecurring,
                 isIncome: amountValue > 0
             )
@@ -143,7 +192,7 @@ struct RevenueExpenditureView: View {
         amount = ""
         date = Date()
         category = ""
-        details = ""
+        note = ""
         isRecurring = false
     }
 }
