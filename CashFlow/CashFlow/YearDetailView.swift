@@ -6,11 +6,11 @@
 //
 
 import SwiftUI
+
 struct YearDetailView: View {
     var year: FinancialYear
     @State private var newItemName: String = ""
     @State private var newItemAmount: String = ""
-    @State private var showAddItem = false
     @ObservedObject var viewModel: FinancialViewModel
     
     var body: some View {
@@ -24,67 +24,62 @@ struct YearDetailView: View {
                 endPoint: .bottomTrailing
             )
             .ignoresSafeArea()
-            List {
-                ForEach(year.entries) { entry in
-                    Section(header: Text(monthName(entry.month))
-                        .foregroundColor(.black)) {
-                            ForEach(entry.items) { item in
-                                HStack {
-                                    Text(item.name)
-                                    Spacer()
-                                    Text(String(format: "%.2f €", item.amount))
-                                }
-                                .foregroundColor(.black)
-                            }
-                        }
+            VStack {
+                HStack {
+                    Text("< August")
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .padding()
+                    Spacer()
+                    Text("963,58")
+                        .font(.title)
+                        .foregroundColor(.green)
+                        .padding()
                 }
-            }
-            .background(Color.blue)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: { showAddItem.toggle() }) {
-                        Image(systemName: "plus")
-                            .foregroundColor(.black)
+                List {
+                    ForEach(year.entries.flatMap { $0.items }) { item in
+                        HStack {
+                            Text(item.name)
+                                .foregroundColor(.black) // Text ohne Hintergrund
+                            Spacer()
+                            Text(String(format: "%.2f €", item.amount))
+                                .foregroundColor(item.amount < 0 ? .red : .green)
+                        }
                     }
                 }
-            }
-            .sheet(isPresented: $showAddItem) {
-                VStack(spacing: 20) {
+                .background(Color.clear)
+                .scrollContentBackground(.hidden) // Entfernt den weißen Hintergrund der Liste
+                Divider()
+                    .overlay(.white)
+                    .frame(width: 300)
+                    .padding(.horizontal)
+                
+                HStack {
                     TextField("Name", text: $newItemName)
                         .font(.subheadline)
-                        .foregroundColor(Color(UIColor(red: 22/255, green: 31/255, blue: 75/255, alpha: 1)))
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(10)
+                        .foregroundColor(Color.white)
                         .multilineTextAlignment(.center)
-                        .padding(.horizontal, 20)
                     TextField("Betrag", text: $newItemAmount)
                         .font(.subheadline)
-                        .foregroundColor(Color(UIColor(red: 22/255, green: 31/255, blue: 75/255, alpha: 1)))
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(10)
+                        .foregroundColor(Color.white)
                         .multilineTextAlignment(.center)
-                        .padding(.horizontal, 20)
-                    Button("Hinzufügen") {
-                        addItem()
-                        showAddItem = false
-                    }
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 50)
-                    .background(Color.white)
-                    .foregroundColor(Color(red: 42/255, green: 60/255, blue: 152/255))
-                    .cornerRadius(10)
-                    .padding(.horizontal)
                 }
-                .background(Color(red: 42/255, green: 60/255, blue: 152/255))
+                Spacer()
+                Button("NEUER EINTRAG") {
+                    addItem()
+                }
+                .frame(height: 50)
+                .font(.title)
+                .foregroundColor(.white)
                 .cornerRadius(10)
+                .padding(.horizontal)
+                .padding(.top, 10) // Padding unter dem Divider
             }
         }
     }
     
     func monthName(_ month: Int) -> String {
-        return YearDetailView.dateFormatter.monthSymbols[month - 1] // Gibt den Namen des Monats zurück
+        return YearDetailView.dateFormatter.monthSymbols[month - 1]
     }
     
     func addItem() {
@@ -93,16 +88,17 @@ struct YearDetailView: View {
         if let firstMonth = year.entries.first?.month {
             viewModel.addItem(year: year.year, month: firstMonth, item: newItem)
         }
+        newItemName = ""
+        newItemAmount = ""
     }
     
-    // Statischer DateFormatter zur Vermeidung von Leistungsproblemen bei häufigem Zugriff
     private static let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "de_DE")
         return formatter
     }()
-    
 }
+
 struct YearDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let sampleItems = [Item(name: "Beispiel", amount: 100.00)]
@@ -111,13 +107,3 @@ struct YearDetailView_Previews: PreviewProvider {
         YearDetailView(year: sampleYear, viewModel: FinancialViewModel())
     }
 }
-
-
-
-
-
-
-
-
-
-
