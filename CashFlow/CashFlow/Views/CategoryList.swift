@@ -1,43 +1,29 @@
 //
-//  CategoryList.swift
-//  CashFlow
+// CategoryList.swift
+// CashFlow
 //
-//  Created by Phillip Wilke on 07.08.24.
+// Created by Phillip Wilke on 07.08.24.
 //
-
 import SwiftUI
-
 struct CategoryList: View {
-    
     @State private var newCategory: String = ""
     @State private var withoutCategory: String = ""
     @State private var categoryName: String = ""
-    
-    
     var body: some View {
-        
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color(UIColor(red: 42/255, green: 60/255, blue: 152/255, alpha: 1)), Color(UIColor(red: 22/255, green: 31/255, blue: 75/255, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
-            
-
-            
             VStack{
                 ScrollView{
-                    
                     Spacer()
-                    
                     Button(action:{
-                        
                     }) {
                         Text("Ohne Kategorie")
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding()
                     }
-                    
                     Button(action:{
-                        
                     }) {
                         Text("Gehalt")
                             .font(.headline)
@@ -45,7 +31,6 @@ struct CategoryList: View {
                             .padding()
                     }
                     Button(action:{
-                        
                     }) {
                         Text("Miete")
                             .font(.headline)
@@ -53,7 +38,6 @@ struct CategoryList: View {
                             .padding()
                     }
                     Button(action:{
-                        
                     }) {
                         Text("Nebenkosten")
                             .font(.headline)
@@ -61,7 +45,6 @@ struct CategoryList: View {
                             .padding()
                     }
                     Button(action:{
-                        
                     }) {
                         Text("Haushalt")
                             .font(.headline)
@@ -69,7 +52,6 @@ struct CategoryList: View {
                             .padding()
                     }
                     Button(action:{
-                        
                     }) {
                         Text("Lebensmittel")
                             .font(.headline)
@@ -77,7 +59,6 @@ struct CategoryList: View {
                             .padding()
                     }
                     Button(action:{
-                        
                     }) {
                         Text("Freizeit")
                             .font(.headline)
@@ -85,7 +66,6 @@ struct CategoryList: View {
                             .padding()
                     }
                     Button(action:{
-                        
                     }) {
                         Text("Drogerie")
                             .font(.headline)
@@ -93,7 +73,6 @@ struct CategoryList: View {
                             .padding()
                     }
                     Button(action:{
-                        
                     }) {
                         Text("Gesundheit")
                             .font(.headline)
@@ -101,7 +80,6 @@ struct CategoryList: View {
                             .padding()
                     }
                     Button(action:{
-                        
                     }) {
                         Text("Kommunikation")
                             .font(.headline)
@@ -109,15 +87,13 @@ struct CategoryList: View {
                             .padding()
                     }
                     Button(action:{
-                        
                     }) {
                         Text("Versicherung")
                             .font(.headline)
                             .foregroundColor(.white)
-                          
+                            .padding()
                     }
                     Button(action:{
-                        
                     }) {
                         Text("Sport")
                             .font(.headline)
@@ -125,7 +101,6 @@ struct CategoryList: View {
                             .padding()
                     }
                     Button(action:{
-                        
                     }) {
                         Text("Geschenke")
                             .font(.headline)
@@ -133,19 +108,15 @@ struct CategoryList: View {
                             .padding()
                     }
                     Button(action:{
-                        
                     }) {
                         Text("Urlaub")
                             .font(.headline)
                             .foregroundColor(.white)
-                           
+                            .padding()
                     }
-      
                 }
-                
                 HStack{
                     Button(action:{
-    
                     }) {
                         Text("Neue Kategorie")
                             .font(.headline)
@@ -155,24 +126,17 @@ struct CategoryList: View {
                             .cornerRadius(10)
                     }
                 }
-    
                 Spacer()
-                
                 Text("Du kannst die Kategorien in den Einstellungen bearbeiten")
                     .padding(.top, 9.5)
                     .padding(.bottom, 8)
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .font(.footnote)
                     .foregroundColor(.gray)
-              
-                
-                
             }
         }
     }
 }
-
 #Preview {
     CategoryList()
 }
-
