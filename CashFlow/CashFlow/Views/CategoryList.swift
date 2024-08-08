@@ -14,7 +14,7 @@ struct CategoryList: View {
             LinearGradient(gradient: Gradient(colors: [Color(UIColor(red: 42/255, green: 60/255, blue: 152/255, alpha: 1)), Color(UIColor(red: 22/255, green: 31/255, blue: 75/255, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
             VStack{
-                ScrollView(showsIndicators: false) {
+                ScrollView(showsIndicators : false) {
                     Spacer()
                     Button(action:{
                     }) {
