@@ -11,12 +11,11 @@ struct SplashView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                Color.white
+                Color.black
                 Image("cashflow_logo")
                     .resizable()
-                    .scaledToFill()
-                    .background(.black)
-                    .aspectRatio(contentMode: .fit)
+                    .ignoresSafeArea()
+                    .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width, height: geometry.size.height)
             }
             .onTapGesture {
