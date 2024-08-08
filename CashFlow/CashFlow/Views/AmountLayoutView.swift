@@ -15,16 +15,7 @@ import SwiftUI
 struct AmountLayoutView: View {
   @Binding var item : Item
   var body: some View {
-    HStack {
-      Text(item.name)
-        .padding(.leading,24)
-        .foregroundColor(.white) // Text ohne Hintergrund
-      Spacer()
-      Text(String(format: "%.2f €", item.amount))
-        .foregroundColor(item.amount < 0 ? .red : .green)
-    }  .padding(.horizontal)
-      .background(Color.clear)
-      .scrollContentBackground(.hidden)
+    AmountLayoutRow()
   }
 }
 struct AmountLayoutView_Previews: PreviewProvider {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		51EB75F32C64B80C0057E37C /* AmountLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB75F22C64B80C0057E37C /* AmountLayoutView.swift */; };
 		D2326F792C62655C0066B471 /* AmountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2326F782C62655C0066B471 /* AmountDetailView.swift */; };
+		D29F82722C64B8C300EE78EA /* AmountLayoutRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F82712C64B8C300EE78EA /* AmountLayoutRow.swift */; };
 		D2F0D68E2C6243B400C81107 /* CashFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F0D68D2C6243B400C81107 /* CashFlowApp.swift */; };
 		D2F0D6902C6243B400C81107 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F0D68F2C6243B400C81107 /* ContentView.swift */; };
 		D2F0D6922C6243B500C81107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F0D6912C6243B500C81107 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		51EB75F22C64B80C0057E37C /* AmountLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountLayoutView.swift; sourceTree = "<group>"; };
 		D2326F782C62655C0066B471 /* AmountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountDetailView.swift; sourceTree = "<group>"; };
+		D29F82712C64B8C300EE78EA /* AmountLayoutRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountLayoutRow.swift; sourceTree = "<group>"; };
 		D2F0D68A2C6243B400C81107 /* CashFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F0D68D2C6243B400C81107 /* CashFlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowApp.swift; sourceTree = "<group>"; };
 		D2F0D68F2C6243B400C81107 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				D2326F782C62655C0066B471 /* AmountDetailView.swift */,
+				51EB75F22C64B80C0057E37C /* AmountLayoutView.swift */,
 				D2F0D68F2C6243B400C81107 /* ContentView.swift */,
 				D2F0D69B2C62442400C81107 /* NewCategoryView.swift */,
 				D2F0D6AC2C62522800C81107 /* MonthDetailView.swift */,
@@ -92,7 +95,6 @@
 				D2F0D6A82C62519000C81107 /* FinancialViewModel.swift */,
 				D2F0D6912C6243B500C81107 /* Assets.xcassets */,
 				D2F0D6932C6243B500C81107 /* Preview Content */,
-				51EB75F22C64B80C0057E37C /* AmountLayoutView.swift */,
 			);
 			path = CashFlow;
 			sourceTree = "<group>";
@@ -112,6 +114,7 @@
 				D2F0D6A22C62500F00C81107 /* FinancialEntry.swift */,
 				D2F0D6A42C62504F00C81107 /* FinancialYear.swift */,
 				D2F0D6A62C62508C00C81107 /* DataManager.swift */,
+				D29F82712C64B8C300EE78EA /* AmountLayoutRow.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			files = (
 				D2F0D6A32C62500F00C81107 /* FinancialEntry.swift in Sources */,
 				D2F0D6AB2C6251E800C81107 /* SplashView.swift in Sources */,
+				D29F82722C64B8C300EE78EA /* AmountLayoutRow.swift in Sources */,
 				DA1093E92C625623004D2C66 /* RevenueExpenditureView.swift in Sources */,
 				D2326F792C62655C0066B471 /* AmountDetailView.swift in Sources */,
 				51EB75F32C64B80C0057E37C /* AmountLayoutView.swift in Sources */,
