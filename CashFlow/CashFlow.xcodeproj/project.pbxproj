@@ -52,6 +52,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D29F82702C64A96F00EE78EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D2326F782C62655C0066B471 /* AmountDetailView.swift */,
+				D2F0D68F2C6243B400C81107 /* ContentView.swift */,
+				D2F0D69B2C62442400C81107 /* NewCategoryView.swift */,
+				D2F0D6AC2C62522800C81107 /* MonthDetailView.swift */,
+				DA1093E82C625623004D2C66 /* RevenueExpenditureView.swift */,
+				D2F0D6AA2C6251E800C81107 /* SplashView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D2F0D6812C6243B400C81107 = {
 			isa = PBXGroup;
 			children = (
@@ -71,15 +84,10 @@
 		D2F0D68C2C6243B400C81107 /* CashFlow */ = {
 			isa = PBXGroup;
 			children = (
-				D2F0D69D2C624FA600C81107 /* Model */,
 				D2F0D68D2C6243B400C81107 /* CashFlowApp.swift */,
-				D2F0D68F2C6243B400C81107 /* ContentView.swift */,
+				D29F82702C64A96F00EE78EA /* Views */,
+				D2F0D69D2C624FA600C81107 /* Model */,
 				D2F0D6A82C62519000C81107 /* FinancialViewModel.swift */,
-				D2F0D6AA2C6251E800C81107 /* SplashView.swift */,
-				D2F0D6AC2C62522800C81107 /* MonthDetailView.swift */,
-				D2F0D69B2C62442400C81107 /* NewCategoryView.swift */,
-				DA1093E82C625623004D2C66 /* RevenueExpenditureView.swift */,
-				D2326F782C62655C0066B471 /* AmountDetailView.swift */,
 				D2F0D6912C6243B500C81107 /* Assets.xcassets */,
 				D2F0D6932C6243B500C81107 /* Preview Content */,
 			);
