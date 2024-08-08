@@ -49,13 +49,19 @@ struct YearDetailView: View {
                     Spacer()
                 }
                 
-                Button("EINSTELLUNGEN") {
+                HStack{
+                    Image(systemName: "gear")
+                        .foregroundColor(.white)
+                        .padding(.bottom)
+                    
+                    Button("EINSTELLUNGEN") {
+                    }
+                    .frame(height: 30)
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+                    .padding(.bottom)
                 }
-                .frame(height: 30)
-                .font(.headline)
-                .foregroundColor(.white)
-                .cornerRadius(10)
-                .padding()
                 
                 Divider()
                 
