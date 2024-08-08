@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Item: Identifiable {
+struct Transaction: Identifiable {
     let id = UUID() // Eindeutige ID für den Posten
     var name: String // Name des Postens
     var amount: Double // Betrag des Postens

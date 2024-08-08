@@ -90,7 +90,7 @@ struct YearDetailView: View {
 }
 struct YearsdDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let sampleItems = [Item(name: "", amount: 2600.00)]
+        let sampleItems = [Transaction(name: "", amount: 2600.00)]
         let sampleEntries = [FinancialEntry(month: 1, items: sampleItems)]
         let sampleYear = FinancialYear(year: 2024, entries: sampleEntries)
         YearDetailView(year: sampleYear, viewModel: FinancialViewModel())

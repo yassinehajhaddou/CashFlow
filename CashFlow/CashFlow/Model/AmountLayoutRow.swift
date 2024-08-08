@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AmountLayoutRow: View {
-    @Binding var item : Item
+    @Binding var item : Transaction
     var body: some View {
         HStack {
             Text(item.name)
@@ -24,5 +24,5 @@ struct AmountLayoutRow: View {
     }
 }
 #Preview {
-    AmountLayoutRow(item: .constant(Item(name: "Miete", amount: 720.34)))
+    AmountLayoutRow(item: .constant(Transaction(name: "Miete", amount: 720.34)))
 }

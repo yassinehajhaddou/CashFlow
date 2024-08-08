@@ -16,7 +16,7 @@ class FinancialViewModel: ObservableObject {
     
     func loadData() {
         // Initiale Beispieldaten laden
-        let sampleItems = [Item(name: "Einkommen", amount: 3000), Item(name: "Miete", amount: -1500)]
+        let sampleItems = [Transaction(name: "Einkommen", amount: 3000), Transaction(name: "Miete", amount: -1500)]
         let sampleEntries = (1...12).map { FinancialEntry(month: $0, items: sampleItems) }
         let sampleYears = (2013...2024).map { FinancialYear(year: $0, entries: sampleEntries) }
         years = sampleYears
@@ -26,7 +26,7 @@ class FinancialViewModel: ObservableObject {
         return FinancialViewModel.dateFormatter.monthSymbols[month - 1] // Gibt den Namen des Monats zurück
     }
     
-    func addItem(year: Int, month: Int, item: Item) {
+    func addItem(year: Int, month: Int, item: Transaction) {
         guard let yearIndex = years.firstIndex(where: { $0.year == year }) else { return }
         var entries = years[yearIndex].entries
         guard let entryIndex = entries.firstIndex(where: { $0.month == month }) else { return }
