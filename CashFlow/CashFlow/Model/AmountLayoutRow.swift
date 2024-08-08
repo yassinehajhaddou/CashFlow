@@ -23,3 +23,6 @@ struct AmountLayoutRow: View {
             .scrollContentBackground(.hidden)
     }
 }
+#Preview {
+    AmountLayoutRow(item: .constant(Item(name: "Miete", amount: 720.34)))
+}

@@ -113,11 +113,11 @@
 		D2F0D69D2C624FA600C81107 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D2F0D69E2C624FC000C81107 /* Item.swift */,
+				D29F82712C64B8C300EE78EA /* AmountLayoutRow.swift */,
+				D2F0D6A62C62508C00C81107 /* DataManager.swift */,
 				D2F0D6A22C62500F00C81107 /* FinancialEntry.swift */,
 				D2F0D6A42C62504F00C81107 /* FinancialYear.swift */,
-				D2F0D6A62C62508C00C81107 /* DataManager.swift */,
-				D29F82712C64B8C300EE78EA /* AmountLayoutRow.swift */,
+				D2F0D69E2C624FC000C81107 /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
