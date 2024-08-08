@@ -139,6 +139,7 @@ struct CategoryList: View {
                 }
             }
         }
+        .tint(Color.white)
     }
 }
 #Preview {
