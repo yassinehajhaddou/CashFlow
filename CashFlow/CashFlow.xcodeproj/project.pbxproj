@@ -10,6 +10,7 @@
 		51EB75F32C64B80C0057E37C /* AmountLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB75F22C64B80C0057E37C /* AmountLayoutView.swift */; };
 		D29F82722C64B8C300EE78EA /* AmountLayoutRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F82712C64B8C300EE78EA /* AmountLayoutRow.swift */; };
 		D29F82752C64CB9500EE78EA /* AmountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F82742C64CB9500EE78EA /* AmountDetailView.swift */; };
+		D29F82782C64FAA200EE78EA /* YearDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F82772C64FAA200EE78EA /* YearDetailView.swift */; };
 		D2F0D68E2C6243B400C81107 /* CashFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F0D68D2C6243B400C81107 /* CashFlowApp.swift */; };
 		D2F0D6902C6243B400C81107 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F0D68F2C6243B400C81107 /* ContentView.swift */; };
 		D2F0D6922C6243B500C81107 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2F0D6912C6243B500C81107 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		51EB75F22C64B80C0057E37C /* AmountLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountLayoutView.swift; sourceTree = "<group>"; };
 		D29F82712C64B8C300EE78EA /* AmountLayoutRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountLayoutRow.swift; sourceTree = "<group>"; };
 		D29F82742C64CB9500EE78EA /* AmountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountDetailView.swift; sourceTree = "<group>"; };
+		D29F82772C64FAA200EE78EA /* YearDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearDetailView.swift; sourceTree = "<group>"; };
 		D2F0D68A2C6243B400C81107 /* CashFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F0D68D2C6243B400C81107 /* CashFlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashFlowApp.swift; sourceTree = "<group>"; };
 		D2F0D68F2C6243B400C81107 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				DA1093E82C625623004D2C66 /* RevenueExpenditureView.swift */,
 				D2F0D6AA2C6251E800C81107 /* SplashView.swift */,
 				DAD3DCA42C64BAAD004A4127 /* CategoryList.swift */,
+				D29F82772C64FAA200EE78EA /* YearDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 				D2F0D6902C6243B400C81107 /* ContentView.swift in Sources */,
 				D2F0D68E2C6243B400C81107 /* CashFlowApp.swift in Sources */,
 				D2F0D6AD2C62522800C81107 /* MonthDetailView.swift in Sources */,
+				D29F82782C64FAA200EE78EA /* YearDetailView.swift in Sources */,
 				D2F0D69C2C62442400C81107 /* NewCategoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
