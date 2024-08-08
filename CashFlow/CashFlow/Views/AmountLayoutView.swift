@@ -15,7 +15,7 @@ import SwiftUI
 struct AmountLayoutView: View {
   @Binding var item : Item
   var body: some View {
-    AmountLayoutRow()
+      AmountLayoutRow(item: .constant(Item(name: "Miete", amount: 720.34)))
   }
 }
 struct AmountLayoutView_Previews: PreviewProvider {
