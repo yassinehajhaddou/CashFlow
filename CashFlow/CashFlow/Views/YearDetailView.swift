@@ -64,7 +64,6 @@ struct YearDetailView: View {
                 }
                 
                 Divider()
-                
                     .background(Color.white)
                     .frame(width: 300)
                     .padding(.horizontal)
