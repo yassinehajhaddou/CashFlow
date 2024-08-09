@@ -39,7 +39,7 @@ struct YearDeatailView: View {
                             
                             Spacer()
                             
-                            Text("\(entry.total)")
+                            Text(String(format: "%.2f", entry.total))
                                 .foregroundColor(.white)
                         }
                         .padding(.horizontal)
