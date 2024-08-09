@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct YearDeatailView: View {
+struct YearDetailView: View {
     var year: FinancialYear
     var body: some View {
         
@@ -39,7 +39,7 @@ struct YearDeatailView: View {
                             
                             Spacer()
                             
-                            Text(String(format: "%.2f", entry.total))
+                            Text(String(format: "%.2f €", entry.total))
                                 .foregroundColor(.white)
                         }
                         .padding(.horizontal)
@@ -79,10 +79,13 @@ struct YearDeatailView: View {
                 }
             }
         }
+        .navigationDestination(for: FinancialYear.self) { year in
+            YearListView(year: year)
+        }
     }
 }
+    
+    #Preview {
+        YearDetailView(year: FinancialViewModel().years.first!)
+    }
 
-
-#Preview {
-    YearDeatailView(year: FinancialViewModel().years.first!)
-}
