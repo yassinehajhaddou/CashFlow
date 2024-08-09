@@ -64,8 +64,6 @@ struct EntryDetailView: View {
                         .frame(width: 300)
                         .padding(.leading, 24)
                     
-                    Spacer()
-                    
                     Button("NEUER EINTRAG") {
                     }
                     .frame(height: 50)
