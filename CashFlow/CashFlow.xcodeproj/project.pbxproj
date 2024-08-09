@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		51EB75F32C64B80C0057E37C /* AmountLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB75F22C64B80C0057E37C /* AmountLayoutView.swift */; };
+		51EB75F32C64B80C0057E37C /* TransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EB75F22C64B80C0057E37C /* TransactionView.swift */; };
+		D26206252C66113500906E53 /* YearDeatailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26206242C66113500906E53 /* YearDeatailView.swift */; };
 		D29F82722C64B8C300EE78EA /* AmountLayoutRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F82712C64B8C300EE78EA /* AmountLayoutRow.swift */; };
 		D29F82752C64CB9500EE78EA /* AmountDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F82742C64CB9500EE78EA /* AmountDetailView.swift */; };
-		D29F82782C64FAA200EE78EA /* YearDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F82772C64FAA200EE78EA /* YearDetailView.swift */; };
+		D29F82782C64FAA200EE78EA /* YearListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F82772C64FAA200EE78EA /* YearListView.swift */; };
 		D29F827A2C65E10500EE78EA /* EntryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F82792C65E10500EE78EA /* EntryDetailView.swift */; };
 		D29F827C2C65F93600EE78EA /* MonthWithYearView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D29F827B2C65F93600EE78EA /* MonthWithYearView.swift */; };
 		D2F0D68E2C6243B400C81107 /* CashFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F0D68D2C6243B400C81107 /* CashFlowApp.swift */; };
@@ -30,10 +31,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		51EB75F22C64B80C0057E37C /* AmountLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountLayoutView.swift; sourceTree = "<group>"; };
+		51EB75F22C64B80C0057E37C /* TransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionView.swift; sourceTree = "<group>"; };
+		D26206242C66113500906E53 /* YearDeatailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearDeatailView.swift; sourceTree = "<group>"; };
 		D29F82712C64B8C300EE78EA /* AmountLayoutRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountLayoutRow.swift; sourceTree = "<group>"; };
 		D29F82742C64CB9500EE78EA /* AmountDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmountDetailView.swift; sourceTree = "<group>"; };
-		D29F82772C64FAA200EE78EA /* YearDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearDetailView.swift; sourceTree = "<group>"; };
+		D29F82772C64FAA200EE78EA /* YearListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearListView.swift; sourceTree = "<group>"; };
 		D29F82792C65E10500EE78EA /* EntryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailView.swift; sourceTree = "<group>"; };
 		D29F827B2C65F93600EE78EA /* MonthWithYearView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthWithYearView.swift; sourceTree = "<group>"; };
 		D2F0D68A2C6243B400C81107 /* CashFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,16 +70,17 @@
 			isa = PBXGroup;
 			children = (
 				D29F82742C64CB9500EE78EA /* AmountDetailView.swift */,
-				51EB75F22C64B80C0057E37C /* AmountLayoutView.swift */,
+				51EB75F22C64B80C0057E37C /* TransactionView.swift */,
 				D2F0D68F2C6243B400C81107 /* ContentView.swift */,
 				D2F0D69B2C62442400C81107 /* NewCategoryView.swift */,
 				D2F0D6AC2C62522800C81107 /* MonthDetailView.swift */,
 				DA1093E82C625623004D2C66 /* RevenueExpenditureView.swift */,
 				D2F0D6AA2C6251E800C81107 /* SplashView.swift */,
 				DAD3DCA42C64BAAD004A4127 /* CategoryList.swift */,
-				D29F82772C64FAA200EE78EA /* YearDetailView.swift */,
+				D29F82772C64FAA200EE78EA /* YearListView.swift */,
 				D29F82792C65E10500EE78EA /* EntryDetailView.swift */,
 				D29F827B2C65F93600EE78EA /* MonthWithYearView.swift */,
+				D26206242C66113500906E53 /* YearDeatailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,10 +208,11 @@
 				D2F0D6AB2C6251E800C81107 /* SplashView.swift in Sources */,
 				DAD3DCA52C64BAAD004A4127 /* CategoryList.swift in Sources */,
 				D29F827A2C65E10500EE78EA /* EntryDetailView.swift in Sources */,
+				D26206252C66113500906E53 /* YearDeatailView.swift in Sources */,
 				D29F82722C64B8C300EE78EA /* AmountLayoutRow.swift in Sources */,
 				DA1093E92C625623004D2C66 /* RevenueExpenditureView.swift in Sources */,
 				D29F82752C64CB9500EE78EA /* AmountDetailView.swift in Sources */,
-				51EB75F32C64B80C0057E37C /* AmountLayoutView.swift in Sources */,
+				51EB75F32C64B80C0057E37C /* TransactionView.swift in Sources */,
 				D2F0D69F2C624FC000C81107 /* Transaction.swift in Sources */,
 				D2F0D6A52C62504F00C81107 /* FinancialYear.swift in Sources */,
 				D2F0D6A72C62508C00C81107 /* FinancialManager.swift in Sources */,
@@ -217,7 +221,7 @@
 				D2F0D6902C6243B400C81107 /* ContentView.swift in Sources */,
 				D2F0D68E2C6243B400C81107 /* CashFlowApp.swift in Sources */,
 				D2F0D6AD2C62522800C81107 /* MonthDetailView.swift in Sources */,
-				D29F82782C64FAA200EE78EA /* YearDetailView.swift in Sources */,
+				D29F82782C64FAA200EE78EA /* YearListView.swift in Sources */,
 				D2F0D69C2C62442400C81107 /* NewCategoryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

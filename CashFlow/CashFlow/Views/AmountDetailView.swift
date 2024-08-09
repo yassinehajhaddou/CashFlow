@@ -209,5 +209,5 @@ struct AmountDetailView: View {
 }
 
 #Preview {
-    AmountDetailView(year: FinancialYear(year: 2024, entries: []), viewModel: FinancialViewModel())
+    AmountDetailView(year: FinancialYear(year: "2024", entries: []), viewModel: FinancialViewModel())
 }

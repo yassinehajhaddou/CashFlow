@@ -14,7 +14,9 @@ struct ContentView: View {
     @State private var showLogo = true // Zeigt das Logo oder die Finanzübersicht an
     
     var body: some View {
-        AmountDetailView(year: FinancialYear(year: 2024, entries: []), viewModel: FinancialViewModel())
+        YearListView(viewModel: viewModel)
+        //MonthDetailView(year: FinancialManager.generateSampleFinanceData().first!, viewModel: viewModel)
+        //AmountDetailView(year: FinancialYear(year: 2024, entries: []), viewModel: FinancialViewModel())
         //RevenueExpenditureView(isRevenue:.constant(true) )
     }
 }
