@@ -37,10 +37,10 @@ struct YearListView: View {
                             
                                 Spacer()
                             
-                                Text("\(year.total)")
-                                .font(.title)
+                            Text("\(year.total.formatted())")
                                 .foregroundColor(.white)
-                                .bold()
+                                .font(.title)
+                               
 
                             }
                             .padding(.horizontal)
