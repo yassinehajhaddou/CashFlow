@@ -5,15 +5,19 @@
 // Created by Phillip Wilke on 07.08.24.
 //
 import SwiftUI
+
 struct CategoryList: View {
     @State private var newCategory: String = ""
     @State private var withoutCategory: String = ""
     @State private var categoryName: String = ""
+    
     var body: some View {
+        
         NavigationStack{
             ZStack {
                 LinearGradient(gradient: Gradient(colors: [Color(UIColor(red: 42/255, green: 60/255, blue: 152/255, alpha: 1)), Color(UIColor(red: 22/255, green: 31/255, blue: 75/255, alpha: 1))]), startPoint: .topLeading, endPoint: .bottomTrailing)
                     .ignoresSafeArea()
+                
                 VStack{
                     ScrollView(showsIndicators : false) {
                         Spacer()
@@ -116,6 +120,7 @@ struct CategoryList: View {
                                 .padding()
                         }
                     }
+                    
                     HStack{
                             Button(action:{
                             }) {
@@ -129,7 +134,9 @@ struct CategoryList: View {
                             }
                         }
                     }
+                    
                     Spacer()
+                    
                     Text("Du kannst die Kategorien in den Einstellungen bearbeiten")
                         .padding(.top, 9.5)
                         .padding(.bottom, 8)
