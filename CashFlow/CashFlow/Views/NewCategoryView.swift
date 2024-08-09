@@ -23,14 +23,12 @@ struct NewCategoryView: View {
                         .font(.title)
                         .foregroundColor(.white)
                         .padding(.top, 100)
-                    TextField("Kategorie eingeben", text: $categoryName)
-                        .font(.subheadline)
-                        .foregroundColor(Color(UIColor(red: 22/255, green: 31/255, blue: 75/255, alpha: 1)))
-                        .padding()
-                        .background(Color.white)
-                        .cornerRadius(10)
-                        .multilineTextAlignment(.center)
-                        .padding(.horizontal, 20)
+                    
+                    TextField("", text: $categoryName, prompt: Text("Neue Kategorie eingeben").foregroundColor(categoryName.isEmpty ? Color.white.opacity(0.5) : Color.white))
+                        .multilineTextAlignment(TextAlignment.center)
+                        .font(.title2)
+                        .background(.clear)
+                        .foregroundColor(.white)
                     
                     Spacer()
                     
