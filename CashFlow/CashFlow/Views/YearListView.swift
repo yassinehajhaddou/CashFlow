@@ -38,36 +38,40 @@ struct YearListView: View {
                         }
                        
                     }
+                    
                     Spacer()
                     
-                    HStack{
-                        Image(systemName: "gear")
+                    VStack{
+                        Spacer()
+                        HStack{
+                            Image(systemName: "gear")
+                                .foregroundColor(.white)
+                                .padding(.bottom)
+                            
+                            Button("EINSTELLUNGEN") {
+                            }
+                            .frame(height: 30)
+                            .font(.headline)
                             .foregroundColor(.white)
+                            .cornerRadius(10)
                             .padding(.bottom)
-                        
-                        Button("EINSTELLUNGEN") {
                         }
-                        .frame(height: 30)
-                        .font(.headline)
+                        
+                        Divider()
+                            .background(Color.white)
+                            .frame(width: 300)
+                            .padding(.horizontal)
+                        
+                        Spacer()
+                        
+                        Button("NEUER EINTRAG") {
+                        }
+                        .frame(height: 50)
+                        .font(.title)
                         .foregroundColor(.white)
                         .cornerRadius(10)
-                        .padding(.bottom)
+                        .padding()
                     }
-                    
-                    Divider()
-                        .background(Color.white)
-                        .frame(width: 300)
-                        .padding(.horizontal)
-                    
-                    Spacer()
-                    
-                    Button("NEUER EINTRAG") {
-                    }
-                    .frame(height: 50)
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                    .padding()
                 }
             }
             .navigationDestination(for: FinancialYear.self) { year in
