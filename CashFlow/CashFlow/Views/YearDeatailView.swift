@@ -27,6 +27,7 @@ struct YearDeatailView: View {
                 Text(year.year)
                     .font(.title)
                     .foregroundColor(.white)
+                    .bold()
                     .padding(.leading)
                 
                 ForEach(year.entries, id: \.self) { entry in
