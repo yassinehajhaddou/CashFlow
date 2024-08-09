@@ -38,6 +38,7 @@ class FinancialManager: ObservableObject  {
 
 extension FinancialManager {
     static func generateSampleFinanceData() -> [FinancialYear]{
+        
         let sampleTransactions = [
             Transaction(name: "Gehalt", amount: 4000),
             Transaction(name: "Autoversicherung", amount: -70.00),
@@ -46,8 +47,11 @@ extension FinancialManager {
             Transaction(name: "Kleidung", amount: -250.60),
             Transaction(name: "Fussballschuhe", amount: -99.34)
         ]
-        let sampleEntries = [FinancialEntry(month: "Januar", transactions: sampleTransactions),FinancialEntry(month: "Februar", transactions: sampleTransactions)]
+        
+        let sampleEntries = [FinancialEntry(month: "Januar", transactions: sampleTransactions),FinancialEntry(month: "Februar", transactions: sampleTransactions),FinancialEntry(month: "März", transactions: sampleTransactions), FinancialEntry(month: "April", transactions: sampleTransactions), FinancialEntry(month: "Mai", transactions: sampleTransactions),FinancialEntry(month: "Juni", transactions: sampleTransactions), FinancialEntry(month: "Juli", transactions: sampleTransactions), FinancialEntry(month: "August", transactions: sampleTransactions), FinancialEntry(month: "September", transactions: sampleTransactions), FinancialEntry(month: "Oktober", transactions: sampleTransactions), FinancialEntry(month: "November", transactions: sampleTransactions), FinancialEntry(month: "Dezember", transactions: sampleTransactions)]
+        
         let sampleYears = [FinancialYear(year: "2024", entries: sampleEntries),FinancialYear(year: "2023", entries: sampleEntries)]
+        
         return sampleYears
     }
 }

@@ -30,9 +30,18 @@ struct YearListView: View {
                     ForEach(viewModel.years, id: \.self){ year in
                         NavigationLink(value: year) {
                         HStack{
-                                Text("\(year.year)").foregroundColor(.white)
+                                Text("\(year.year)")
+                                .font(.title)
+                                .foregroundColor(.white)
+                                .bold()
+                            
                                 Spacer()
-                                Text("\(year.total)").foregroundColor(.white)
+                            
+                                Text("\(year.total)")
+                                .font(.title)
+                                .foregroundColor(.white)
+                                .bold()
+
                             }
                             .padding(.horizontal)
                         }
@@ -50,26 +59,19 @@ struct YearListView: View {
                             
                             Button("EINSTELLUNGEN") {
                             }
-                            .frame(height: 30)
                             .font(.headline)
                             .foregroundColor(.white)
-                            .cornerRadius(10)
                             .padding(.bottom)
                         }
-                        
                         Divider()
                             .background(Color.white)
                             .frame(width: 300)
                             .padding(.horizontal)
                         
-                        Spacer()
-                        
                         Button("NEUER EINTRAG") {
                         }
-                        .frame(height: 50)
                         .font(.title)
                         .foregroundColor(.white)
-                        .cornerRadius(10)
                         .padding()
                     }
                 }
